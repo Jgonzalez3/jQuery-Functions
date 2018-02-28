@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Functions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".hide").click(function(){
+                $('.hideandseek').hide();
+            })
+            $(".seek").click(function(){
+                $(".hideandseek").show();
+            })
+            $(".toggle").click(function(){
+                $(".hideandseek").toggle(1000);
+            })
+            $(".slideup").click(function(){
+                $(".slide").slideUp();
+            })
+            $(".slidedown").click(function(){
+                $(".slide").slideDown();
+            })
+            $(".slidetoggle").click(function(){
+                $("p").slideToggle();
+            })
+            $(".fade").click(function(){
+                $(".fade").fadeOut();
+            })
+            $(".fadein").click(function(){
+                $(".fade").fadeIn();
+            })
+            $(".makepacman").click(function(){
+                $(".addclass").addClass("pacman");
+            })
+            $(".makeghost1").click(function(){
+                $(".box").before("<p class ='ghost1'></p>");
+            })
+            $(".makeghost2").click(function(){
+                $(".box").after("<p class='ghost2'></p>");
+            })
+            $(".append").click(function(){
+                $(".play").append("<b> Right Now!</b>");
+            })
+            $(".html").click(function(){
+                $(".play").html("<div class='box'><p class='addclass'></p></div>")
+            })
+            $(".growninja").click(function(){
+                $("img").attr("height", "150");
+            })
+            $(".value").click(function(){
+                $("input:text").val("Javier Gonzalez");
+            })
+            $(".text").click(function(){
+                $("p").text("Why did this happen!");
+            })
+            $(".data").click(function(){
+                $("img").data("add", "I added Data!");
+            })
+            $(".alert").click(function(){
+                alert($("img").data("add"));
+            })
+        })
+    </script>
+    <style>
+        .box{
+            width: 150px;
+            height: 120px;
+            border: solid blue 2px;
+            display: inline-block;
+        }
+        .pacman{
+            width: 0;
+            height: 0;
+            border-left: solid black 50px;
+            border-top: solid black 50px;
+            border-bottom: solid black 50px;
+            border-right: solid transparent 50px;
+            border-radius: 50px 50px;
+            margin: 10px auto;
+        }
+        .ghost1{
+            width: 0;
+            height: 0;
+            border-left: solid red 50px;
+            border-top: solid red 50px;
+            border-bottom: solid red 50px;
+            border-right: solid red 50px;
+            border-radius: 50px 50px 0 0;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .ghost2{
+            width: 0;
+            height: 0;
+            border-left: solid purple 50px;
+            border-top: solid purple 50px;
+            border-bottom: solid purple 50px;
+            border-right: solid purple 50px;
+            border-radius: 50px 50px 0 0;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .makepacman, .makeghost1, .makeghost2, .alert, .data{
+            display: block;
+            margin: 5px;
+        }
+        .triangle{
+            height: 0;
+            width: 0;
+            border-bottom-color: yellow;
+            border-bottom-width: 50px;
+            border-bottom-style: solid;
+            border-right: solid transparent 25px;
+            border-left: solid transparent 25px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="hide">Hide Me</button>
+    <button class="seek">Show Me</button>
+    <p class="hideandseek">Let's play a game click hide me! I will hide now try and find me!</p>
+    <button class="toggle">Toggle Me</button>
+    <p class="slide">Slide me all around!</p>
+    <button class="slideup">Slide Up</button>
+    <button class="slidedown">Slide Down</button>
+    <button class="slidetoggle">Slide Toggle</button>
+    <p class="fade">I want you to fade this paragraph in and out. To get Faded click on this paragraph!</p>
+    <p class="fadein">Click this paragraph if the above paragraph fades out!</p>
+    <div class="box">
+        <p class="addclass"></p>
+    </div>
+    <button class="makepacman">Make Pacman</button>
+    <button class="makeghost1">Make Ghost Before</button>
+    <button class="makeghost2">Make Ghost After</button>
+    <p class="play">Play Pacman</p>
+    <button class="append">Append Play Pacman</button>
+    <button class="html">Change Play Pacman</button>
+    <img src="ninja.png" alt="ninja image" width="100" height="100" style="display: block"><br>
+    <button class="growninja">Grow the Ninja</button>
+    <p>Name: <input type="text" name="user"></p>
+    <button class="value">Add My Name</button>
+    <p>Hello!</p>
+    <button class="text">Change the Text on all P Tags</button>
+    <button class="data">Attach Data to Ninja</button>
+    <button class="alert">Show data Added as Alert</button>
+</body>
+</html>
